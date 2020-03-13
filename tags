@@ -4,6 +4,3 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-compressVideo	terminal/available/files.sh	/^compressVideo() {$/;"	f
-ip	terminal/available/network.sh	/^ip() {$/;"	f
-port	terminal/available/network.sh	/^port() {$/;"	f
