@@ -57,5 +57,8 @@ git clone https://github.com/danielmiessler/SecLists /opt/seclists
 git clone https://github.com/rapid7/metasploit-framework /opt/metasploit
 git clone https://github.com/offensive-security/exploitdb /opt/exploitdb
 
+# Setup Ubuntu
+
+
 # Update Shell
 chsh -s $(which zsh)

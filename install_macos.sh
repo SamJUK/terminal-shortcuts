@@ -16,21 +16,21 @@ yesno() {
 }
 
 install_xcode() {
+  xcode-select --install	
   echo "[+] Xcode installed"
-  # xcode-select install
 }
 
 install_homebrew() {
   if [[ $(which brew) ]]; then
     echo "[-] Homebrew is already installed, skipping step"
   else
-    # /bin/bash -c "$(curl -fsS https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /bin/bash -c "$(curl -fsS https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     echo "[+] Homebrew installed"
     
-    # brew update
+    brew update
     echo "[+] Homebrew Updated"
     
-    # brew upgrade
+    brew upgrade
     echo "[+] Homebrew Upgraded Packages"
   fi
 }
@@ -72,8 +72,18 @@ update_shell() {
   fi
 }
 
+clone_repo() {
+  if [[ ! -d "/opt/sam" ]]; then
+    sudo git clone https://github.com/samjuk/terminal-shortcuts.git /opt/sam
+    echo "[+] Cloned Repository"
+  else
+    echo "[-] Repository already cloned"
+  fi
+}
+
 install_xcode
 install_homebrew
-install_homebrew_packages
-update_shell
-copy_dotfiles
+clone_repo
+# install_homebrew_packages
+# update_shell
+# copy_dotfiles
