@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+compress () {
+    ffmpeg -i "$1" -vcodec libx264 -f mp4 -vb 1024k -preset slow "$2"
+}
+
+help () {
+  cat <<EOF
+Usage: webvid
+ - webvid /path/to/soure/file.mp4 /path/to/output.mp4
+EOF
+}
+
+abort () {
+  echo $1
+  exit 1
+}
+
+
+[ -f "$1" ] && compress "$1" "$2" || help

@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+docker run -it --rm wpscanteam/wpscan --url "$1" --api-token=xxa20uV2b6hQzEoTNofETJK7Y1Un1slHk0asI00InNY

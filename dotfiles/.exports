@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+export TZ='Europe/London'
+
+export EDITOR='vim'
+
+# Hist
+export HISTSIZE='32768';
+export HISTFILESIZE="${HISTSIZE}";
+export HISTCONTROL='ignoreboth';
+
+# Lang
+export LANG='en_GB.UTF-8';
+export LC_ALL='en_GB.UTF-8';
+
+# Man
+export MANPAGER='less -X';
+export LESS_TERMCAP_md="${yellow}";
+
+#GPG
+export GPG_TTY=$(tty);
+
+export BASH_SILENCE_DEPRECATION_WARNING=1;

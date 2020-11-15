@@ -1,0 +1,47 @@
+# Software
+- TeamViewer
+- Robo3T
+- OpenVPN
+- MySQL
+- Nginx
+- PHP
+- Python3
+- Ruby
+- NodeJS
+- GPG2
+- Spectacles
+- Malwarebytes
+- Spotify
+- OBS
+- FileZilla
+- Firefox Quantum
+- Firefox
+- Flux
+- NordVPN
+- Brave
+- Chrome
+- Libreoffice
+- EOS Utilites
+- Notion
+- Thunderbird
+- Slack
+- Discord
+- Skype
+- Photoshop
+- Adobe XD
+- git
+- Docker
+- ITerm2
+- Sublime
+- VSCode
+- PHPStorm
+- Postman
+- MySQL Workbench
+- Virtualbox
+- Sherlock
+- Dirsearch
+- Metasploit
+- GitTools
+- WPScan
+- SecLists
+- ngrok

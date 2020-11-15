@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# docker run theyahya/sherlock $@
+python3 /opt/sherlock/sherlock $@

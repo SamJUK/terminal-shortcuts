@@ -1,0 +1,66 @@
+#!/usr/bin/env sh
+
+CONFIGPATH="$HOME/.config/upload"
+
+HOSTS=$(ls $CONFIGPATH)
+
+upload () {
+    SRC=$(realpath "$2")
+    CONFIG="$CONFIGPATH/$1"
+
+
+    HOST=$(cat $CONFIG | head -n1)
+    UPLOADDIR=$(cat $CONFIG | tail -n1)
+    
+    UPLOADPATH="$UPLOADDIR/$3"
+
+    while true; do
+        read -p "Confirm: Upload $SRC => $HOST:$UPLOADPATH ? [y/n]" yn
+        case "$yn" in
+	    [yY]) scp "$SRC" "$HOST:$UPLOADPATH"; exit;;
+	    [nN]) echo "Aborting"; exit 1;;
+        esac
+    done
+}
+
+
+
+helpXit () {
+    cat <<EOF
+Usage upload:
+  - upload hosts
+  - upload help
+  - upload {host} /path/to/some/file.mp4
+  - upload {host} /path/to/some/file.mp4 newname.mp4
+EOF
+exit 1;
+}
+
+hosts () {
+  echo -e "Available Hosts"
+  for h in $HOSTS; do echo "> $h"; done
+}
+
+list () {
+    CONFIG="$CONFIGPATH/$1"
+    HOST=$(cat $CONFIG | head -n1)
+    UPLOADPATH=$(cat $CONFIG | tail -n1)
+
+    ssh "$HOST" "ls -d $UPLOADPATH/*"
+}
+
+VALID_HOST=$(echo $HOSTS | grep "$1")
+if [ ! "$VALID_HOST" == "" ]; then
+  if [ -f "$2" ]; then
+  	upload "$1" "$2" "$3"
+  	exit;
+  fi
+
+  list "$1"
+  exit;
+fi
+
+case "$1" in
+    "hosts") hosts ;;
+    *) helpXit ;;
+esac
